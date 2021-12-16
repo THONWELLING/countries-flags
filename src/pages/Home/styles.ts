@@ -8,6 +8,39 @@ export const Container = styled.div`
   margin: 0;
   display: block;
 `
+export const Nav = styled.aside`
+  max-width: 100vw;
+  margin-left: 0;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+
+  fieldset {
+    border: none;
+  }
+
+  legend {
+    font-size: 14px;
+    color: #6D2080;
+  }
+  select {
+    width: 328px;
+    font-size: 16px;
+    font-weight: bld;
+    color: #8D8D8D;
+    padding: 5px;
+
+    option {
+      height: 48px;
+      font-weight: bold;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+    }
+  }
+`
+
 export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

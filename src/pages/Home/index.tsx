@@ -3,6 +3,7 @@ import * as C from './styles'
 import {api} from '../api'
 import { Countries } from '../../types/types'
 import Loading from '../../components/Loading'
+import { SearchContext } from '../../contexts/searchContext'
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
   }, [])
 
   const loadFlags = async () => {
+    setFlags([])
     let json = await api.getAll()
 
     setFlags(json)
@@ -28,8 +30,25 @@ const Home = () => {
       {flags.length !== 0 &&
         <>
           <h1>aqui vai ser a página inicial com os conteúdos primários</h1>
-          <input type="search" />
-          Total de Países: {flags.length}
+          <C.Nav>
+            <fieldset>
+              <legend>Filtrar Por</legend>
+              <select >
+                <option>Escolha Uma Opção</option>
+                <option>Todos</option>
+                <option>Região</option>
+                <option>Capital</option>
+                <option>Lingua</option>
+                <option>País</option>
+                <option>Código De Ligação</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>segundo campo </legend>
+              <select></select>
+            </fieldset>
+            Total de Países: {flags.length}
+          </C.Nav>
           <C.List>
             {flags.map((item, index) => {
               return(
